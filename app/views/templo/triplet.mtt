@@ -1,0 +1,16 @@
+﻿			<div class="stack triplet">
+				<div id="mascot"></div>
+				<div class="triplet-inner">
+					<div class="col3">
+						<h5>::raw third_title::</h5>
+						::raw third::
+					</div>
+					<div class="col1">
+						::raw first::
+					</div>
+					<div class="col2">
+						<h5>::raw second_title::</h5>
+						::raw second::
+					</div>
+				</div>
+			</div>

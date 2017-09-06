@@ -1,0 +1,11 @@
+				<div class="stack">
+					<?php echo $this->vars->right ?>
+					<div <?php if ($this->vars->right) { echo "class=\"has-sidecol\""; } ?>>
+						<?php echo $this->vars->main ?>
+					</div>
+				</div>
+				<?php if ($this->vars->loggedIn): ?>
+				<div class="button-holder stack">
+					<a href="<?php echo $this->vars->baseUrl ?>/node/edit/<?php echo $this->vars->nodeUri ?>" class="btn">Edit this page</a>
+				</div>
+				<?php endif; ?>

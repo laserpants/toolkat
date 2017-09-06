@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Toolkat</title>
+<link rel="stylesheet" type="text/css" media="screen, projection" href="<?php echo $this->vars->baseUrl ?>/../public/css/reset.css" />
+<link rel="stylesheet" type="text/css" media="screen, projection" href="<?php echo $this->vars->baseUrl ?>/../public/css/base.css" />
+<link rel="stylesheet" type="text/css" media="screen, projection" href="<?php echo $this->vars->baseUrl ?>/../public/css/common.css" />
+<link rel="icon" href="<?php echo $this->vars->baseUrl ?>/../public/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->vars->baseUrl ?>/../public/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="<?php echo $this->vars->baseUrl ?>/../public/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->vars->baseUrl ?>/../public/js/jquery.restnoodel.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->vars->baseUrl ?>/../public/js/common.js"></script>
+<?php if ($this->vars->hasIdentity): ?>
+<script type="text/javascript" src="<?php echo $this->vars->baseUrl ?>/../public/js/autoresize.jquery.min.js"></script>
+<?php endif; ?>
+</head>
+<body>
+	<div id="menu-container" class="stack">
+		<h1 id="logo"><a href="<?php echo $this->vars->baseUrl ?>">toolkat</a></h1>
+		<div class="node-menu"><?php echo $this->vars->nodeMenu ?></div>
+	</div>
+	<div id="message_stack" class="message stack"></div>
+	<div id="error_stack" class="error stack"></div>
+	<?php echo $this->vars->helper->get('JsDisplayMessageHelper')
+								  ->set('current', false)
+								  ->set('error', false)
+								  ->go() ?>
+
+	<div id="main-content" class="stack">
+		<div id="wrapper">
+			<div class="inner stack">
+			<?php echo $this->vars->content ?>
+			</div><div class="clear"></div>
+		</div>
+		<?php if ($this->vars->triplet): ?>
+		<div id="featured" class="stack">
+			<?php echo $this->vars->triplet ?>
+		</div><div class="clear"></div>
+		<?php endif; ?>
+	</div>
+	<div id="footer" class="stack">
+		<div class="info">
+			Powered by Toolkat &amp; haXe. Toolkat is an open-source project released under the New BSD License
+		<div class="clear"></div></div><div class="clear"></div>
+	</div>
+</body>
+</html>

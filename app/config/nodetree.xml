@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+
+<root>
+
+	<node title="Home" link="">
+		<region pos="main">
+			<block uri="home-welcome" template="home" />
+		</region>
+		<region pos="triplet">
+			<block uri="triplet" template="triplet" />
+		</region>
+	</node>
+
+	<node title="Posts" link="post" />
+	
+	<node title="About">
+		<region pos="main">
+			<block uri="about" />
+		</region>
+		<region pos="right">
+			<block uri="about" template="column" />
+		</region>
+	</node>
+	
+	<!--
+		hidden: auth		    These nodes will not appear in the menu when logged in
+	-->
+	<node title="Log in" link="login" hidden="auth" />
+	<node title="Sign up" link="user/new" hidden="auth" />
+
+	<!--
+		hidden: anonymous		These nodes will ONLY appear in the menu when logged in
+	-->
+	<node title="Edit profile" link="user/edit/:user" hidden="anonymous" />
+	<node title="Log out" link="session" hidden="anonymous">
+		<attribute name="method" value="delete-now" />
+	</node>
+	
+</root>

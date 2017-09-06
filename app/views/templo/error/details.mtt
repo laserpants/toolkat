@@ -1,0 +1,15 @@
+﻿				<h3>Application error</h3>
+				<table>
+					<tr>
+						<td>Exception</td>
+						<td>::exception::</td>
+					</tr>
+					<tr>
+						<td>Message</td>
+						<td>::message::</td>
+					</tr>
+					<tr>
+						<td>Source</td>
+						<td>::raw source::</td>
+					</tr>
+				</table>

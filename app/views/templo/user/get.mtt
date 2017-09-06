@@ -1,0 +1,7 @@
+﻿				<h2>User profile</h2>
+				<dl>
+					<dt>Name</dt>
+					<dd>::user.name::</dd>
+					<dt>Username</dt>
+					<dd>::user.username::</dd>
+				</dl>

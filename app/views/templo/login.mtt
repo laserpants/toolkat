@@ -1,0 +1,28 @@
+﻿::raw helper
+	.get('JsDisplayMessageHelper')
+	.set('current', true)
+	.set('error', true)
+	.go()
+::
+					<h2>::title::</h2>
+					<form method="::form.getMethod()::" action="::form.getAction()::" class="std stack">
+						<div class="element stack">
+							<label for="login_username">::form.getLabel('username')::</label>
+							::raw helper.get('FormFieldErrorHelper').set('form', form).set('field', 'username').go()::
+							<input type="text" id="login_username" name="username" value="::form.getElement('username').getValue()::" />
+						</div>
+						<div class="element stack">
+							<label for="login_password">::form.getLabel('password')::</label>
+							::raw helper.get('FormFieldErrorHelper').set('form', form).set('field', 'password').go()::
+							<input type="password" id="login_password" name="password" value="" />
+						</div>
+						<div class="element stack">
+							<input type="submit" value="Login" />
+						</div><div class="clear"></div>
+					</form>
+					<div class="righthand">
+						<p class="post-it">
+							This is a demo-application powered by Toolkat & haXe. Toolkat is an open-source project 
+							released under the New BSD License. 
+						</p>
+					</div>

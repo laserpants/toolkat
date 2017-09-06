@@ -1,0 +1,46 @@
+				<h2><?php echo $this->vars->post->title ?></h2>
+<?php echo $this->vars->post->content ?>
+<?php // if (count($this->vars->post->comments) > 0): ?>
+<?php if ($this->vars->post->comments->length > 0): ?>
+<!-- comments -->
+				<hr />
+	
+				<h4>Comments</h4>
+				<?php foreach ($this->vars->post->comments as $comment): ?>
+				<dl class="comments">
+					<dt><?php echo $comment->email ?></dt>
+					<dd><?php echo $comment->content ?></dd>
+				</dl>
+<?php endforeach; ?>
+<!-- /comments -->
+<?php endif; ?>
+				<hr />
+				<div class="clear"></div>
+				<div class="stack">
+<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+							  ->set('form', $this->vars->form)
+							  ->go() ?>		
+							  
+				<h4>New comment</h4>
+				<form method="<?php echo $this->vars->form->getMethod() ?>" action="<?php echo $this->vars->form->getAction() ?>" class="std borderless stack">	
+					<input type="hidden" name="postId" value="<?php echo $this->vars->form->getValue('postId') ?>" />
+					<input type="hidden" name="_inline" value="true" />
+					<div class="element stack">
+						<label for="comment_email"><?php echo $this->vars->form->getLabel('email') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+													  ->set('field', 'email')
+													  ->go() ?>		
+						<input type="email" id="comment_email" name="email" value="<?php echo $this->vars->form->getValue('email') ?>" />
+					</div>
+					<div class="element stack">
+						<label for="comment_content"><?php echo $this->vars->form->getLabel('content') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+													  ->set('field', 'content')
+													  ->go() ?>		
+						<textarea id="comment_content" name="content"><?php echo $this->vars->form->getValue('content') ?></textarea>
+					</div>
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div>
+				</form>
+				</div>

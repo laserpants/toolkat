@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<key>31739CF63CC0559A0AD8A8D4ED3DE1A1</key>
+	<layout>main</layout>
+	
+	<!-- PHP settings -->
+	<php>
+		<db>
+			<adapter>mysql</adapter>
+			<host>localhost</host>
+			<database>toolkat</database>
+			<user>root</user>
+			<password></password>
+			<port>3306</port>
+		</db>
+		<base>/www</base>
+		<mmcd>false</mmcd>
+		<template>phtml</template>
+	</php>
+	
+	<!-- NekoVM settings -->
+	<neko>
+		<db>
+			<!--
+			<adapter>mysql</adapter>
+			<host>localhost</host>
+			<database>toolkat</database>
+			<user>root</user>
+			<password></password>
+			<port>3306</port>
+			-->
+			<adapter>sqlite</adapter>
+			<database>toolkat.s3db</database>
+		</db>
+		<base></base>
+		<mmcd>false</mmcd>
+		<template>templo</template>
+	</neko>
+</config>

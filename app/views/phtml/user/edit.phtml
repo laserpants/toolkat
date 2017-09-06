@@ -1,0 +1,54 @@
+				<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+				                              ->set('form', $this->vars->form)
+									          ->go() ?>									  
+				<h2>Edit user</h2>
+				<form method="<?php echo $this->vars->form->getMethod() ?>" action="<?php echo $this->vars->form->getAction() ?>" class="std stack">	
+					<div class="element stack">
+						<label for="user_name"><?php echo $this->vars->form->getLabel('name') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'name')->go() ?>
+						<input type="text" id="user_name" name="name" value="<?php echo $this->vars->form->getValue('name') ?>" />
+					</div>
+					<div class="element stack">
+						<label for="user_username"><?php echo $this->vars->form->getLabel('username') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'username')->go() ?>
+						<input type="text" id="user_username" name="username" value="<?php echo $this->vars->form->getValue('username') ?>" />
+					</div>
+					<div class="element stack">
+						<label for="user_email"><?php echo $this->vars->form->getLabel('email') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'email')->go() ?>
+						<input type="text" id="user_email" name="email" value="<?php echo $this->vars->form->getValue('email') ?>" />
+					</div>
+					<div class="stack element">
+						<label class="checkbox">
+							<input id="password_change" type="checkbox" name="password_change" <?php if ($this->vars->changePwd) { echo "checked=\"checked\""; } ?> />Change password?
+						</label>
+					</div>
+					<script type="text/javascript">
+//<![CDATA[
+	$('#password_change').click(function(){
+		var e=$('#password_edit');
+		$(this).attr('checked') ? e.show() : e.hide();
+	});
+//]]>
+					</script>
+					<fieldset id="password_edit" class="element" <?php if (!$this->vars->changePwd) { echo "style=\"display:none;\""; } ?>>
+						<div class="element stack">
+							<label for="user_password"><?php echo $this->vars->form->getLabel('current') ?></label>
+							<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'current')->go() ?>
+							<input type="password" id="user_current" name="current" value="" />
+						</div>
+						<div class="element stack">
+							<label for="user_password"><?php echo $this->vars->form->getLabel('password') ?></label>
+							<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'password')->go() ?>
+							<input type="password" id="user_password" name="password" value="" />
+						</div>
+						<div class="element stack">
+							<label for="user_confirmation"><?php echo $this->vars->form->getLabel('confirmation') ?></label>
+							<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'confirmation')->go() ?>
+							<input type="password" id="user_confirmation" name="confirmation" value="" />
+						</div>
+					</fieldset>		
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div>
+				</form>

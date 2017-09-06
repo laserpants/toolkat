@@ -1,0 +1,38 @@
+﻿				<h2>::post.title::</h2>
+::post.content::
+::if post.comments.length != 0::
+<!-- comments -->
+				<hr />
+	
+				<h4>Comments</h4>
+::foreach comment post.comments::
+				<dl class="comments">
+					<dt>::comment.email::</dt>
+					<dd>::comment.content::</dd>
+				</dl>
+::end::
+<!-- /comments -->
+::end::
+				<hr />
+				<div class="clear"></div>
+				<div class="stack">
+::helper.get('FormFieldErrorHelper').set('form', form).go()::
+				<h4>New comment</h4>
+				<form method="::form.getMethod()::" action="::form.getAction()::" class="std borderless stack">	
+					<input type="hidden" name="postId" value="::form.getElement('postId').getValue()::" />
+					<input type="hidden" name="_inline" value="true" />
+					<div class="element stack">
+						<label for="comment_email">::form.getLabel('email')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'email').go()::
+						<input type="email" id="comment_email" name="email" value="::form.getElement('email').getValue()::" />
+					</div>
+					<div class="element stack">
+						<label for="comment_content">::form.getLabel('content')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'content').go()::
+						<textarea id="comment_content" name="content">::form.getElement('content').getValue()::</textarea>
+					</div>
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div>
+				</form>
+				</div>

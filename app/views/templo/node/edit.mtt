@@ -1,0 +1,10 @@
+﻿				<div class="overflow stack">
+					::if null != right:: ::raw right:: ::end::
+
+					::if (null != right)::::set class = 'has-sidecol'::::end::
+					<div ::attr class class::>
+						<div style="float:left; width:100%;">
+							::raw main::
+						</div>
+					</div>
+				</div>

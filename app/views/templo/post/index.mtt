@@ -1,0 +1,36 @@
+﻿
+				<h2>Posts</h2>
+				<hr />
+				<div class="paginator">
+					::raw pages::
+				</div>
+				
+				::if 0 != posts.length::
+				<!-- posts -->
+				::foreach post posts::
+				<h3><a href="::baseUrl::/post/::post.id::">::post.title::</a></h3>
+					::post.content::
+
+				::if post.comments.length != 0::
+				<div class="comments">
+					<h4>Comments</h4>
+					::foreach comment post.comments::
+					<dl class="comments">
+						<dt>::comment.email::</dt>
+						<dd>::comment.content::</dd>
+					</dl>
+					::end::
+				</div>
+				::end::
+
+				::if (post.commentsCount > 4)::
+				<a href="::baseUrl::/post/::post.id::">View all ::post.commentsCount:: comments</a>
+				::end::
+				<hr />
+				::end::
+				<!-- /posts -->
+				::end::
+
+				<div class="paginator">
+					::raw pages::
+				</div>

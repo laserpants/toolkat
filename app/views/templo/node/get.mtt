@@ -1,0 +1,12 @@
+﻿				<div class="stack">
+					::if null != right:: ::raw right:: ::end::
+					::if (null != right)::::set class = 'has-sidecol'::::end::
+					<div ::attr class class::>
+						::raw main::
+					</div>
+				</div>
+				::if loggedIn::
+				<div class="button-holder stack">
+					<a href="::baseUrl::/node/edit/::nodeUri::" class="btn">Edit this page</a>
+				</div>	
+				::end::

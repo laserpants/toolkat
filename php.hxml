@@ -1,0 +1,24 @@
+-cp src/org/toolkt/base/php
+-cp src
+-cp app
+#-cp lib
+-resource app/config/config.xml@config_xml
+-resource app/config/nodetree.xml@nodetree_xml
+
+-php www
+
+--no-inline 
+-main org.toolkt.core.application.Application
+Import
+
+--next
+
+-cp src/org/toolkt/base/neko
+-cp src
+-cp app
+-cp lib
+-resource app/config/config.xml@config_xml
+
+-neko app/setup/bin/setup.n
+
+-main org.toolkt.core.application.Setup

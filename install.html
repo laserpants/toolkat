@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Setting up the application</title>
+<link href="public/css/reset.css"  type="text/css" rel="stylesheet" media="screen, projection" />
+<link href="public/css/base.css"   type="text/css" rel="stylesheet" media="screen, projection" />
+<link href="public/css/common.css" type="text/css" rel="stylesheet" media="screen, projection" />
+<link href="public/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="public/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+<style type="text/css">
+	h1 { color:#6ca8ff; font-size:32px; font-weight:normal; letter-spacing:-.04em; }
+	h2 { padding-bottom:.3em; border-bottom:1px solid #ddd; margin-top:1.2em; font-size:23px; }
+	#wrapper { text-align:left; margin:64px auto; width:700px; }
+	small p { margin:.1em; font-size:.9em; line-height:150%; }
+	code { border:1px solid #c2d9e6; background:#eff8fd; padding:0 3px; color:#3030ff; }
+	table { margin:0; }
+	ul.bullet { margin-bottom:1em; }
+	table tr td { border:none; padding:1px 0; }
+	td em { font-style:normal; font:100% mono-space, monospace; color:#666; }
+	pre { padding:0; margin:0; border:0; }
+	body { background:top center url('public/images/bkg.gif') no-repeat; }
+	p.bar { margin-bottom:3em; font-size:.9em; }
+	p.indent { padding-left:2em; }
+	a { color:#f00482; }
+</style>
+</head>
+<body>
+    <div id="wrapper">
+    	<p class="bar">Toolkat &ndash; &copy;2010 Tristar | <a href="http://www.tristarafrica.com">www.tristarafrica.com</a></p>
+        <h1>Setting up the application</h1>
+        <p>Before installing Toolkat, you need to have the following on your system:</p>
+        <ul class="bullet">
+            <li><a href="http://haxe.org">haXe</a></li>
+        	<li>Apache web server</li>
+            <li>PHP and/or NekoVM</li>
+        	<li>MySQL or SQLite</li>
+        </ul>
+        <p>For memory based cache and session management, you need <a href="http://memcached.org/">Memcached</a>.</p>
+        <p>To deploy for Neko, you also need the <a href="http://nekovm.org/doc/mod_neko">mod_neko</a> Apache module. Alternatively, the NekoTools web server can be used as development server.</p>
+        <h2>1. Folder permissions</h2>
+        <p>Check for sufficient write permissions on:</p>
+        <ul class="bullet">
+            <li><code>data/layouts/compiled</code> <sup>i</sup></li>
+            <li><code>data/cache</code> <sup>ii</sup></li>
+            <li><code>data/session</code> <sup>ii</sup></li>
+            <li><code>db</code> <sup>iii</sup></li>
+        </ul>
+        <small>
+            i. Only Neko<br />
+            ii. Not necessary if using memory storage (Memcached)<br />
+            iii. Only necessary for SQLite<br />
+        </small>
+        <h2>2. Configuration</h2>
+        <p>In app/config/config.xml, edit the following entries:</p>
+        <table>
+        	<col width="1" />
+            <tr>
+                <td><code>&lt;db&gt;</code></td>
+                <td></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td><code>&lt;adapter&gt;</code> either <em>mysql</em> or <em>sqlite</em> <code>&lt;/adapter&gt;</code></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td><code>&lt;host&gt;</code> usually <em>localhost</em> <code>&lt;/host&gt;</code></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td><code>&lt;database&gt;</code> database name <code>&lt;/database&gt;</code></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td><code>&lt;user&gt;</code> database user <code>&lt;/user&gt;</code></td>
+            </tr>
+            <tr>
+            	<td></td>
+                <td><code>&lt;password&gt;</code> password (no&hellip; really?) <code>&lt;/password&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;/db&gt;</code></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><code>&lt;base&gt;</code> Base url (optional) <code>&lt;/base&gt;</code></td>
+            </tr>
+        </table>
+        <h2>3. Compile</h2>
+        <p>Compile the application by running either:</p>
+        <p class="indent"><code>haxe neko.hxml</code></p>
+        <p>or:</p>
+        <p class="indent"><code>haxe php.hxml</code></p>
+        <h2>4. Create the database</h2>
+        <p>Create the database with the name specified in <code>config.xml</code>. (This step is not necessary for SQLite).</p>
+        <h2>5. Setup database tables</h2>
+        <p>
+        	Run:
+        	<code>neko app/setup/bin/setup.n</code>
+        </p>
+        <h2>6. Done</h2>
+		<p>You should now be able to open the application <a href="http://127.0.0.1">from the browser!</a></p>
+        <h2>7. Optional step, if using FlashDevelop:</h2>
+        <p>Create a new project (HaXe &rarr; Empty project) and under Project / Properties, add the following classpaths:</p>
+        <ul class="bullet">
+        	<li><code>app</code></li>
+        	<li><code>src</code></li>
+        	<li><code>src\org\toolkt\base\neko</code></li>
+        	<li><code>lib</code></li>
+        </ul>
+        <h2>Disclaimer</h2>
+        <pre>
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL TRISTAR HOLDINGS (EA) BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.    
+        </pre>
+    </div>
+</body>
+</html>
+

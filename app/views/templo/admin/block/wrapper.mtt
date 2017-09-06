@@ -1,0 +1,30 @@
+﻿						<div>
+							::raw helper
+								.get('JsDisplayMessageHelper')
+								.set('current', true)
+								.go()
+							::
+							<div id="editor-block-wrapper-::uri::-::region::-::key::" class="block-wrapper stack">
+								<div class="inner-wrap stack">
+									::raw helper
+										.get('FormFieldErrorHelper')
+										.set('form', form)
+										.set('field', 'content')
+										.go()
+									::
+								</div>
+								<div class="front-content stack">
+									::raw block::
+								</div>	
+								<form class="editor-content-wrapper content-form stack" method="::form.getMethod()::" action="::form.getAction()::">
+									<textarea class="editor-content" name="content" rows="1" cols="5"></textarea>
+									<input type="hidden" name="uri" value="::uri::" />
+									<input type="hidden" name="key" value="::key::" />
+								</form>
+							</div>
+<script type="text/javascript">
+//<![CDATA[
+	$('#editor-block-wrapper-::uri::-::region::-::key::').blockwrapper();
+//]]>
+</script>
+						</div>

@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !install.html$
+RewriteCond %{REQUEST_URI} !favicon.ico$
+RewriteRule .* bin/app.n [L]
+</IfModule>
+

@@ -1,0 +1,38 @@
+
+				<h2>Posts</h2>
+				<hr />
+				<div class="paginator">
+					<?php echo $this->vars->pages ?>
+				</div>
+				
+				<?php // if (count($this->vars->posts) > 0): ?>
+				<?php if ($this->vars->posts->length > 0): ?>
+				<!-- posts -->
+				<?php foreach ($this->vars->posts as $post): ?>
+				<h3><a href="<?php echo $this->vars->baseUrl ?>/post/<?php echo $post->id ?>"><?php echo $post->title ?></a></h3>
+					<?php echo $post->content ?>
+
+				<?php // if (count($post->comments) > 0): ?>
+				<?php if ($post->comments->length > 0): ?>
+				<div class="comments">
+					<h4>Comments</h4>
+					<?php foreach ($post->comments as $comment): ?>
+					<dl class="comments">
+						<dt><?php echo $comment->email ?></dt>
+						<dd><?php echo $comment->content ?></dd>
+					</dl>
+					<?php endforeach; ?>
+				</div>
+				<?php endif; ?>
+
+				<?php if ($post->commentsCount > 4): ?>
+				<a href="<?php echo $this->vars->baseUrl ?>/post/<?php echo $post->id ?>">View all <?php echo $post->commentsCount ?> comments</a>
+				<? endif; ?>
+				<hr />
+				<?php endforeach; ?>
+				<!-- /posts -->
+				<?php endif; ?>
+
+				<div class="paginator">
+					<?php echo $this->vars->pages ?>
+				</div>

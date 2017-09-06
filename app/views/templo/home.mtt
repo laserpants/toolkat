@@ -1,0 +1,7 @@
+﻿				<div class="main-home stack">
+					<h1>::raw title::</h1>
+					::raw body::
+					<p class="bar">
+						::raw info::
+					</p>
+				</div>

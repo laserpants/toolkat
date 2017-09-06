@@ -1,0 +1,41 @@
+				<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+				                              ->set('form', $this->vars->form)
+									          ->go() ?>
+
+				<h2>Sign up</h2>
+				<form method="<?php echo $this->vars->form->getMethod() ?>" action="<?php echo $this->vars->form->getAction() ?>" class="std stack">	
+					<div class="element stack">
+						<label for="user_name"><?php echo $this->vars->form->getLabel('name') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'name')->go() ?>
+						<input type="text" id="user_name" name="name" value="<?php echo $this->vars->form->getElement('name')->getValue() ?>" />
+					</div>
+					<div class="element stack">
+						<label for="user_username"><?php echo $this->vars->form->getLabel('username') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'username')->go() ?>
+						<input type="text" id="user_username" name="username" value="<?php echo $this->vars->form->getElement('username')->getValue() ?>" />
+					</div>
+					<div class="element stack">
+						<label for="user_email"><?php echo $this->vars->form->getLabel('email') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'email')->go() ?>
+						<input type="text" id="user_email" name="email" value="<?php echo $this->vars->form->getElement('email')->getValue() ?>" />
+					</div>
+					<div class="element stack">
+						<label for="user_password"><?php echo $this->vars->form->getLabel('password') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'password')->go() ?>
+						<input type="password" id="user_password" name="password" value="" />
+					</div>
+					<div class="element stack">
+						<label for="user_confirmation"><?php echo $this->vars->form->getLabel('confirmation') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'confirmation')->go() ?>
+						<input type="password" id="user_confirmation" name="confirmation" value="" />
+					</div>
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div><div class="clear"></div>
+				</form>
+				<div class="righthand">
+					<p class="post-it">
+						This is a demo-application powered by Toolkat &amp; haXe. Toolkat is an open-source project 
+						released under the New BSD License. 
+					</p>
+				</div>

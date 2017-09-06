@@ -1,0 +1,2 @@
+all:
+	haxe temploc.hxml

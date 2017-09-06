@@ -1,0 +1,38 @@
+﻿				::helper.get('FormFieldErrorHelper').set('form', form).go()::
+				<h2>Sign up</h2>
+				<form method="::form.getMethod()::" action="::form.getAction()::" class="std stack">	
+					<div class="element stack">
+						<label for="user_name">::form.getLabel('name')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'name').go()::
+						<input type="text" id="user_name" name="name" value="::form.getElement('name').getValue()::" />
+					</div>
+					<div class="element stack">
+						<label for="user_username">::form.getLabel('username')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'username').go()::
+						<input type="text" id="user_username" name="username" value="::form.getElement('username').getValue()::" />
+					</div>
+					<div class="element stack">
+						<label for="user_email">::form.getLabel('email')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'email').go()::
+						<input type="text" id="user_email" name="email" value="::form.getElement('email').getValue()::" />
+					</div>
+					<div class="element stack">
+						<label for="user_password">::form.getLabel('password')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'password').go()::
+						<input type="password" id="user_password" name="password" value="" />
+					</div>
+					<div class="element stack">
+						<label for="user_confirmation">::form.getLabel('confirmation')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'confirmation').go()::
+						<input type="password" id="user_confirmation" name="confirmation" value="" />
+					</div>
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div><div class="clear"></div>
+				</form>
+				<div class="righthand">
+					<p class="post-it">
+						This is a demo-application powered by Toolkat & haXe. Toolkat is an open-source project 
+						released under the New BSD License. 
+					</p>
+				</div>

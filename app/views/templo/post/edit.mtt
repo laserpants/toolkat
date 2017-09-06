@@ -1,0 +1,17 @@
+﻿				::helper.get('FormFieldErrorHelper').set('form', form).go()::
+				<h2>Edit post</h2>
+				<form method="::form.getMethod()::" action="::form.getAction()::" class="std stack">	
+					<div class="element stack">
+						<label for="post_title">::form.getLabel('title')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'title').go()::
+						<input type="text" id="post_title" name="title" value="::form.getElement('title').getValue()::" />
+					</div>
+					<div class="element stack">
+						<label for="post_content">::form.getLabel('content')::</label>
+						::raw helper.get('FormFieldErrorHelper').set('field', 'content').go()::
+						<textarea id="post_content" name="content">::form.getElement('content').getValue()::</textarea>
+					</div>
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div>
+				</form>

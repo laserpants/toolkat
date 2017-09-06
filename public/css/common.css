@@ -1,0 +1,189 @@
+﻿
+body, html { height:100%; }
+body { text-align:center; }
+h1, h2 { margin-bottom:.7em; }	
+h4 { margin-top:1em; }
+ul, ul li { list-style:none; margin:0; }
+dl dd { margin-bottom:1em; }
+hr { border-color:#cdcdcd; border-width:1px 0 0 0; border-style:dotted; margin-top:1em; }
+a { color:#5c98ff; }
+.stack { position:relative; width:100%; float:left; overflow:hidden; clear:both; text-align:left; }
+.clear { clear:both; }
+
+label.checkbox { line-height:1; margin-top:3px; font-size:.8em; }
+label.checkbox input { vertical-align:bottom; margin:0 5px -1px 0; }
+
+/* Wrapper
+---------------------------------------------------------------------------- */
+
+#wrapper { width:900px; margin:0 auto; margin-top:134px; }
+
+/* Logo
+---------------------------------------------------------------------------- */
+
+#logo { position:absolute; margin-top:12px; margin-left:233px; z-index:2; font-size:35px; letter-spacing:-.03em; }
+#logo, #logo a { font-family:'Segoe UI';  text-decoration:none; color:#b3b3b3; font-style:italic; }
+a:hover { color:#5c98ff !important; }
+
+/* Messages
+---------------------------------------------------------------------------- */
+
+#message_stack, #error_stack { display:none; height:27px; padding-top:5px; text-align:center; position:absolute; margin-top:76px; }
+#message_stack { background:#ffffcc; border-bottom:1px solid #f7eab7; border-top:1px solid #f7eab7; }
+#error_stack { background:#ffdfdf; border-bottom:1px solid #ffbaba; border-top:1px solid #ffbaba; }
+
+/* Menu
+---------------------------------------------------------------------------- */
+
+#menu-container { height:76px; padding-left:384px; width:auto; }
+ul#node-menu, ul#node-menu li { float:left; font-family:'Segoe UI'; }
+ul#node-menu { margin-top:28px; width:600px; }
+ul#node-menu a { color:#5c98ff; text-decoration:none; font-size:1em; text-transform:lowercase; padding:1px 14px 5px; display:block; }
+ul#node-menu a:hover, ul#node-menu li.current { background:#dfdfdf; }
+ul#node-menu li { margin:0 4px; }
+
+/* Forms
+---------------------------------------------------------------------------- */
+
+form.std { border:1px solid #e8e8e8; #e8e8e8; padding:.7em 1em .2em; width:40%; }
+form.std .element { margin-bottom:.8em; }
+form.std .element ul, ul.validation-msgs { border:1px solid #ffbfbf; border-bottom:none; padding:2px 7px; background:#ffe4cf; }
+form.std .element ul li, ul.validation-msgs li { font-size:11px; line-height:160%; padding-bottom:2px; }
+form.std input[type='text'], form.std input[type='password'], form.std input[type='email'], form.std textarea 
+	{ width:98.4%; line-height:130%; border:1px solid #ddd; padding:4px 3px; width:97.8%; }
+form.std textarea { min-height:180px; margin:0; }
+form.std input, form.std select, form.std textarea { font-size:.9em; }
+form.std fieldset { padding:1em; }
+form.borderless { border:none; padding:0; }
+
+
+/* Pagination
+---------------------------------------------------------------------------- */
+
+.paginator {
+	display:inline;
+	height:50px;
+	line-height:350%;
+	text-align:center;
+}
+
+.paginator ul li {
+	display:inline;
+	margin:0;
+	padding:0;
+}
+
+.paginator ul li a {
+	background:#efefef;
+	border:1px solid #ddd;
+	line-height:300%;
+	margin:0 3px;
+	text-decoration:none;
+}
+
+.paginator ul li a, .paginator ul li span {
+	padding:5px 12px 7px;
+}
+
+/* Browser specific
+---------------------------------------------------------------------------- */
+
+ul#node-menu a:hover, ul#node-menu li.current { -moz-border-radius:4px; }
+form.std { -moz-border-radius:8px; }
+#overlay { opacity:0.7; -ms-filter:'alpha(opacity=70)'; filter:alpha(opacity=70); }
+a.btn { -moz-border-radius:5px; }
+dl.comments { -moz-border-radius:5px;}
+
+/* Editor
+---------------------------------------------------------------------------- */
+
+.editor-btn-save { cursor:pointer; width:18px; height:18px; background:top left url('../images/editor/save.gif') no-repeat; position:absolute; margin-left:-24px; }
+
+/* Buttons
+---------------------------------------------------------------------------- */
+a.btn { text-decoration:none; color:#fff; font-size:.8em; padding:4px 12px 6px; background:#afafaf; }
+a.btn:hover { background:#7f7f7f; color:#fff !important; }
+
+/* Misc.
+---------------------------------------------------------------------------- */
+
+#overlay { position:absolute; width:100%; height:100%; background:#000; z-index:10; }
+
+ul.bullet, ul.bullet li { list-style-type:disc !important; list-style-position:inside !important; }
+ul.bullet li { margin-left:1.4em; line-height:150%; }
+ul.bullet li ul li { list-style-type:circle !important; }
+ul.bullet li ul li ul li { list-style-type:disc !important; }
+
+ul.tree { margin-bottom:2em; border-top:1px solid #e5e5e5; padding-top:.4em; }
+ul.tree li { font-size:13px; line-height:19px; }
+ul.tree li strong { color:#386699; font-weight:normal; }
+
+div.triplet { background:#fff6bc; border-top:1px solid #f0d3ab; overflow:visible; margin-top:-44px; }
+div.triplet h5 { font-family:'Segoe UI'; text-transform:lowercase; font-weight:bold; font-size:1.1em; }
+div.triplet ul li, div.triplet p { font-size:.8em; }
+div.triplet p { line-height:150%; }
+
+div.triplet-inner { width:58%; margin:2.8em auto; }
+div.triplet-inner .col1 { float:left; width:30%; padding-top:1em; }
+div.triplet-inner .col2 { margin-left:35%; }
+div.triplet-inner .col3 { float:right; }
+div.triplet-inner .col3, div.triplet-inner .col2 { border-left:1px solid #ecc89a; padding-left:2%; width:28%; } 
+div.triplet-inner .col1 img.logo { margin-bottom:6px; margin-top:4px; float:left; }
+div.triplet-inner .col1 p { margin-left:65px; }
+
+#mascot { background:top left url('../images/cat.png') no-repeat; position:absolute; margin-top:-276px; margin-left:260px; width:178px; height:289px; }
+#tristar-logo { background:top left url('../images/tristar.gif') no-repeat; width:52px; height:38px; float:left; }
+
+p.bar { margin-top:1.5em; text-align:center; font-size:.9em; background:#f4f4f4; padding:7px 0 9px; border-width:1px 0; border-color:#ddd; border-style:solid; }
+p.post-it { background:#fff6bc; border-color:#f0d3ab; border-style:solid; border-width:1px 0; padding:1em 1.4em 1.2em 1.4em; font-size:.9em; }
+
+/* Comments
+---------------------------------------------------------------------------- */
+
+div.comments { border-left:3px solid #e4e4e4; padding-left:1em; margin-bottom:1em; }
+dl.comments { font-size:.9em; padding:5px 0 8px 11px; background:#f7f7f7; margin-bottom:5px; border:1px solid #ddd; }
+dl.comments dd { margin:0; }
+dl.comments dt { font-size:.9em; }
+#comment_content { min-height:30px; }
+
+/* Main content
+---------------------------------------------------------------------------- */
+
+#main-content { min-height:100.8%; margin-bottom:-5em; margin-top:-86px; }
+#wrapper .inner { overflow:visible; margin-bottom:7em; }
+
+#featured { margin-bottom:5em; overflow:visible; }
+
+.main-home { padding-left:250px; width:60%; overflow:visible; z-index:4; }
+.main-home h1 { font-size:36px; font-family:'Segoe UI'; font-weight:normal; color:#6ca8ff; letter-spacing:-0.04em; }
+.button-holder { margin-top:1em; padding:.7em 0 1em 0; border-style:solid; border-color:#ddd; border-width:1px 0; }
+.righthand { margin-left:420px; font-size:.9em; }
+.overflow { overflow:visible !important; }
+
+/* Side-column
+---------------------------------------------------------------------------- */
+
+.column { float:right; border-left:1px solid #ddd; width:240px; font-size:.85em; line-height:155%; padding-left:1em; }
+.has-sidecol { margin-right:280px; }
+
+/* Node menu
+---------------------------------------------------------------------------- */
+
+#menu-container { padding-left:0; width:100%; background:#efefef; border-bottom:1px solid #ddd; }
+#menu-container .node-menu { margin-left:488px; width:auto; height:70px; float:left; position:absolute; z-index:3; }
+
+/* Footer
+---------------------------------------------------------------------------- */
+
+#footer { background:#edf2f6; border-top:4px solid #d5d9de; height:5em; text-align:center; }
+#footer .info { font-size:.9em; margin-top:.5em; color:#6ca8ff; }
+
+/* Editor
+---------------------------------------------------------------------------- */
+
+.block-wrapper { overflow:visible; }
+.block-wrapper .front-content { visibility:hidden; margin-top:-2000px; }
+.block-wrapper form.editor-content-wrapper { margin:0; padding:0; border:1px dotted #888; width:99%; }
+.block-wrapper form.editor-content-wrapper textarea 
+	{ padding:0; font-size:inherit; line-height:inherit; margin:0; padding:0; border:none; }
+.block-wrapper .inner-wrap { width:99.3%; }

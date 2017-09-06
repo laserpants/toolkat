@@ -1,0 +1,35 @@
+					<?php echo $this->vars->helper->get('JsDisplayMessageHelper')
+												  ->set('current', true)
+												  ->set('error', true)
+												  ->go() ?>		
+												  
+					<h2><?php echo $this->vars->title ?></h2>
+					<form method="<?php echo $this->vars->form->getMethod() ?>" action="<?php echo $this->vars->form->getAction() ?>" class="std stack">
+						<div class="element stack">
+							<label for="login_username"><?php echo $this->vars->form->getLabel('username') ?></label>
+
+							<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+														  ->set('form', $this->vars->form)
+														  ->set('field', 'username')
+														  ->go() ?>
+							<input type="text" id="login_username" name="username" value="<?php echo $this->vars->form->getValue('username') ?>" />
+						</div>
+						<div class="element stack">
+							<label for="login_password"><?php echo $this->vars->form->getLabel('password') ?></label>
+							
+							<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+														  ->set('form', $this->vars->form)
+														  ->set('field', 'password')
+														  ->go() ?>
+							<input type="password" id="login_password" name="password" value="" />
+						</div>
+						<div class="element stack">
+							<input type="submit" value="Login" />
+						</div><div class="clear"></div>
+					</form>
+					<div class="righthand">
+						<p class="post-it">
+							This is a demo-application powered by Toolkat &amp; haXe. Toolkat is an open-source project 
+							released under the New BSD License. 
+						</p>
+					</div>

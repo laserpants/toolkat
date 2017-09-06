@@ -1,0 +1,19 @@
+				<?php echo $this->vars->helper->get('FormFieldErrorHelper')
+											  ->set('form', $this->vars->form)
+											  ->go() ?>
+				<h2>Edit post</h2>
+				<form method="<?php echo $this->vars->form->getMethod() ?>" action="<?php echo $this->vars->form->getAction() ?>" class="std stack">	
+					<div class="element stack">
+						<label for="post_title"><?php echo $this->vars->form->getLabel('title') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'title')->go() ?>
+						<input type="text" id="post_title" name="title" value="<?php echo $this->vars->form->getValue('title') ?>" />
+					</div>
+					<div class="element stack">
+						<label for="post_content"><?php echo $this->vars->form->getLabel('content') ?></label>
+						<?php echo $this->vars->helper->get('FormFieldErrorHelper')->set('field', 'content')->go() ?>
+						<textarea id="post_content" name="content"><?php echo $this->vars->form->getValue('content') ?></textarea>
+					</div>
+					<div class="element stack">
+						<input type="submit" value="Save" />
+					</div>
+				</form>
